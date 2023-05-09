@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="https://cdn.jsdelivr.net/pyodide/v0.23.2/full/pyodide.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      async function main(){
+        let pyodide = await loadPyodide();
+        await pyodide.loadPackage("numpy");
+        await pyodide.loadPackage("matplotlib");
+        console.log(pyodide.runPython(`
+            import sys
+            sys.version
+        `));
+        pyodide.runPython(await (await fetch("https://raw.githubusercontent.com/gdadam/janus-github-pages/main/demo.py")).text());
+      }
+      main();
+    </script>
+  </body>
+</html>
