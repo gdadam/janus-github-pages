@@ -151,6 +151,7 @@ def make_plot(parameters, theta_deg=4.0):
     plt.colorbar(shrink=0.7)
     plt.gca().set_aspect('equal')
     plt.show()
+print("debug")
 parameters = dict(params_3R_MoSSe_SS_VBM_Gamma)
 make_plot(parameters, theta_deg=4.0)
 parameters = dict(params_3R_WSTe_SS_VBM_Gamma)
